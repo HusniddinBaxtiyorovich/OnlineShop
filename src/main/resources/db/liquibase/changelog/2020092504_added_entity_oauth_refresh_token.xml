@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.7.xsd">
+
+    <!-- Added the entity OAUTH_REFRESH_TOKEN -->
+    <changeSet id="2020092504-1" author="super_admin">
+        <createTable tableName="OAUTH_REFRESH_TOKEN">
+            <column name="TOKEN_ID" type="varchar(255)"/>
+            <column name="TOKEN" type="BYTEA"/>
+            <column name="AUTHENTICATION" type="BYTEA"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

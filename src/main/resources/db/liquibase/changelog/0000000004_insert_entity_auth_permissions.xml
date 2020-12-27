@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.7.xsd">
+
+    <!-- Insert AUTH_PERMISSIONS -->
+    <changeSet id="0000000004-1" author="super_admin">
+        <sql>
+            <!-- User -->
+            INSERT INTO auth_permissions(id, state, code, name, parent_id, created_by, created_date)
+            VALUES (-1, 0, 'USER', 'User', null, -1, now()),
+                   (-2, 0, 'USER_READ', 'User Read', -1, -1, now()),
+                   (-3, 0, 'USER_CREATE', 'User Create', -1, -1, now()),
+                   (-4, 0, 'USER_UPDATE', 'User Update', -1, -1, now()),
+                   (-5, 0, 'USER_DELETE', 'User Delete', -1, -1, now()),
+                   (-6, 0, 'USER_ATTACH_ROLE', 'User Attach Role', -1, -1, now()),
+                   (-7, 0, 'USER_CHANGE_PASSWORD', 'User Change Password', -1, -1, now());
+
+            <!-- Role -->
+            INSERT INTO auth_permissions(id, state, code, name, parent_id, created_by, created_date)
+            VALUES (-8, 0, 'ROLE', 'Role', null, -1, now()),
+                   (-9, 0, 'ROLE_READ', 'Role Read', -8, -1, now()),
+                   (-10, 0, 'ROLE_CREATE', 'Role Create', -8, -1, now()),
+                   (-11, 0, 'ROLE_UPDATE', 'Role Update', -8, -1, now()),
+                   (-12, 0, 'ROLE_DELETE', 'Role Delete', -8, -1, now()),
+                   (-13, 0, 'ROLE_ATTACH_PERMISSION', 'Role Attach Permission', -8, -1, now());
+
+            <!-- Permission -->
+            INSERT INTO auth_permissions(id, state, code, name, parent_id, created_by, created_date)
+            VALUES (-14, 0, 'PERMISSION', 'Permission', null, -1, now()),
+                   (-15, 0, 'PERMISSION_READ', 'Permission Read', -14, -1, now()),
+                   (-16, 0, 'PERMISSION_CREATE', 'Permission Create', -14, -1, now()),
+                   (-17, 0, 'PERMISSION_UPDATE', 'Permission Update', -14, -1, now()),
+                   (-18, 0, 'PERMISSION_DELETE', 'Permission Delete', -14, -1, now());
+        </sql>
+    </changeSet>
+</databaseChangeLog>

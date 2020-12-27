@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.7.xsd">
+
+    <!-- Insert LANGUAGES -->
+    <changeSet id="0000000006-1" author="super_admin">
+        <sql>
+            INSERT INTO languages(id, state, code, name, created_by, created_date)
+            VALUES (-1, 0, 'uz', 'Uzbek', -1, now()),
+                   (-2, 0, 'ru', 'Russian', -1, now()),
+                   (-3, 0, 'en', 'English', -1, now());
+        </sql>
+    </changeSet>
+</databaseChangeLog>

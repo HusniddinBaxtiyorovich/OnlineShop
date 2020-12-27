@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.7.xsd">
+
+    <!-- Insert AUTH_ROLES_PERMISSIONS -->
+    <changeSet id="0000000005-1" author="super_admin">
+        <sql>
+            <!-- Admin -->
+            INSERT INTO auth_roles_permissions(SELECT -1, id FROM auth_permissions); <!-- All Permission Set -->
+
+            <!-- User -->
+            INSERT INTO auth_roles_permissions(role_id, permission_id) VALUES (-2, -1), (-2, -2);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

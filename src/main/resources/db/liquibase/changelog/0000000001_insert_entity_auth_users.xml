@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.7.xsd">
+
+    <!-- Insert AUTH_USERS -->
+    <changeSet id="0000000001-1" author="super_admin">
+        <sql>
+            INSERT INTO auth_users(id, state, first_name, last_name, email, phone, username, password, user_type, is_system_admin, created_by, created_date)
+            VALUES (-1, 0, 'Sherzod', 'Ergashev', 'sherzodbektatu@gmail.com', '+998932440403', 'sherkhan', '$2a$10$e/uyFWoEWaAwr83xg/NzkOi2WTOMkscueWRCLdHjX53Rd2OfsdUcC', 'ADMIN', true, -1, now()), <!-- password:71729697 -->
+                   (-2, 0, 'Admin', 'Admin', 'admin@gmail.com', '+998977777777', 'admin', '$2a$10$NU6kxbbTONDpZNOehNVPkeg/R/K3A7YNjXMEP9lSwALHKMa//8J8i', 'ADMIN', false, -1, now()),  <!-- password:12345 -->
+                   (-3, 0, 'User', 'User', 'user@gmail.com', '+998944444444', 'user', '$2a$10$NU6kxbbTONDpZNOehNVPkeg/R/K3A7YNjXMEP9lSwALHKMa//8J8i', 'CLIENT', false, -1, now());     <!-- password:12345 -->
+        </sql>
+    </changeSet>
+</databaseChangeLog>

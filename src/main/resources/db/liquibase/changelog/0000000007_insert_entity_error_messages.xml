@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.7.xsd">
+
+    <!-- Insert ERROR_MESSAGES -->
+    <changeSet id="0000000007-1" author="super_admin">
+        <sql>
+            INSERT INTO error_messages(id, state, error_code, created_by, created_date)
+            VALUES (-1, 0, 'ERROR_MESSAGE_NOT_FOUND', -1, now()),
+                   (-2, 0, 'USER_NOT_FOUND_ID', -1, now()),
+                   (-3, 0, 'USER_IS_DELETED', -1, now()),
+                   (-4, 0, 'USER_IS_INACTIVE', -1, now()),
+                   (-5, 0, 'USER_IS_BLOCKED', -1, now()),
+                   (-6, 0, 'OBJECT_NOT_FOUND', -1, now()),
+                   (-7, 0, 'OBJECT_NOT_FOUND_ID', -1, now()),
+                   (-8, 0, 'OBJECT_IS_DELETED', -1, now()),
+                   (-9, 0, 'OBJECT_IS_NULL', -1, now()),
+                   (-10, 0, 'OBJECT_NOT_NULL', -1, now()),
+                   (-11, 0, 'OBJECT_ID_REQUIRED', -1, now()),
+                   (-12, 0, 'OBJECT_GIVEN_FIELD_REQUIRED', -1, now()),
+                   (-13, 0, 'ACCESS_DENIED', -1, now()),
+                   (-14, 0, 'PASSWORD_INCORRECT', -1, now()),
+                   (-15, 0, 'OBJECT_SHOULD_BE', -1, now());
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.7.xsd">
+
+    <!-- Insert ERROR_MESSAGE_TRANSLATIONS -->
+    <changeSet id="0000000008-1" author="super_admin">
+        <sql>
+            <!-- ERROR_MESSAGE_NOT_FOUND -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-1, 0, -1, 'Error message with code %s not found', -1, -1, now()),
+                   (-2, 0, -1, 'Error message with code %s not found', -2, -1, now()),
+                   (-3, 0, -1, 'Error message with code %s not found', -3, -1, now());
+
+            <!-- USER_NOT_FOUND_ID -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-4, 0, -2, 'User with provided id: %s not found', -1, -1, now()),
+                   (-5, 0, -2, 'User with provided id: %s not found', -2, -1, now()),
+                   (-6, 0, -2, 'User with provided id: %s not found', -3, -1, now());
+
+            <!-- USER_IS_DELETED -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-7, 0, -3, 'User with provided id: %s is deleted', -1, -1, now()),
+                   (-8, 0, -3, 'User with provided id: %s is deleted', -2, -1, now()),
+                   (-9, 0, -3, 'User with provided id: %s is deleted', -3, -1, now());
+
+            <!-- USER_IS_INACTIVE -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-10, 0, -4, 'User with provided id: %s is inactive', -1, -1, now()),
+                   (-11, 0, -4, 'User with provided id: %s is inactive', -2, -1, now()),
+                   (-12, 0, -4, 'User with provided id: %s is inactive', -3, -1, now());
+
+            <!-- USER_IS_BLOCKED -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-13, 0, -5, 'User with provided id: %s is blocked', -1, -1, now()),
+                   (-14, 0, -5, 'User with provided id: %s is blocked', -2, -1, now()),
+                   (-15, 0, -5, 'User with provided id: %s is blocked', -3, -1, now());
+
+            <!-- OBJECT_NOT_FOUND -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-16, 0, -6, '%s not found', -1, -1, now()),
+                   (-17, 0, -6, '%s not found', -2, -1, now()),
+                   (-18, 0, -6, '%s not found', -3, -1, now());
+
+            <!-- OBJECT_NOT_FOUND_ID -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-19, 0, -7, '%s with provided id: %s not found', -1, -1, now()),
+                   (-20, 0, -7, '%s with provided id: %s not found', -2, -1, now()),
+                   (-21, 0, -7, '%s with provided id: %s not found', -3, -1, now());
+
+            <!-- OBJECT_IS_DELETED -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-22, 0, -8, '%s with provided id: %s is deleted', -1, -1, now()),
+                   (-23, 0, -8, '%s with provided id: %s is deleted', -2, -1, now()),
+                   (-24, 0, -8, '%s with provided id: %s is deleted', -3, -1, now());
+
+            <!-- OBJECT_IS_NULL -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-25, 0, -9, 'Provided object: %s is null', -1, -1, now()),
+                   (-26, 0, -9, 'Provided object: %s is null', -2, -1, now()),
+                   (-27, 0, -9, 'Provided object: %s is null', -3, -1, now());
+
+            <!-- OBJECT_NOT_NULL -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-28, 0, -10, 'Provided object: %s is not null', -1, -1, now()),
+                   (-29, 0, -10, 'Provided object: %s is not null', -2, -1, now()),
+                   (-30, 0, -10, 'Provided object: %s is not null', -3, -1, now());
+
+            <!-- OBJECT_ID_REQUIRED -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-31, 0, -11, '%s id not provided', -1, -1, now()),
+                   (-32, 0, -11, '%s id not provided', -2, -1, now()),
+                   (-33, 0, -11, '%s id not provided', -3, -1, now());
+
+            <!-- OBJECT_GIVEN_FIELD_REQUIRED -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-34, 0, -12, 'Provided field : %s of %s is required', -1, -1, now()),
+                   (-35, 0, -12, 'Provided field : %s of %s is required', -2, -1, now()),
+                   (-36, 0, -12, 'Provided field : %s of %s is required', -3, -1, now());
+
+            <!-- ACCESS_DENIED -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-37, 0, -13, 'You do not have access for %s', -1, -1, now()),
+                   (-38, 0, -13, 'You do not have access for %s', -2, -1, now()),
+                   (-39, 0, -13, 'You do not have access for %s', -3, -1, now());
+
+            <!-- PASSWORD_INCORRECT -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-40, 0, -14, 'Password is incorrect', -1, -1, now()),
+                   (-41, 0, -14, 'Password is incorrect', -2, -1, now()),
+                   (-42, 0, -14, 'Password is incorrect', -3, -1, now());
+
+            <!-- OBJECT_SHOULD_BE -->
+            INSERT INTO error_message_translations(id, state, message_id, name, lang_id, created_by, created_date)
+            VALUES (-43, 0, -15, 'Provider object: %s should be %s', -1, -1, now()),
+                   (-44, 0, -15, 'Provider object: %s should be %s', -2, -1, now()),
+                   (-45, 0, -15, 'Provider object: %s should be %s', -3, -1, now());
+        </sql>
+    </changeSet>
+</databaseChangeLog>
