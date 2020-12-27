@@ -1,0 +1,2 @@
+# my-awesome-core-gradle
+
