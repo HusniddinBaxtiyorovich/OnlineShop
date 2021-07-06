@@ -83,7 +83,7 @@ public class RoleService extends GenericCrudService<_Role, RoleDto, RoleCreateDt
         baseValidation(role);
 
         role.setCode(role.getCode().toUpperCase());
-        repository.update(role);
+        repository.save(role);
 
         return get(role.getId());
     }

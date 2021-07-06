@@ -92,7 +92,7 @@ public class UserService extends GenericCrudService<_User, UserDto, UserCreateDt
 
         user = userMapper.fromUpdateDto(dto, user);
         baseValidation(user);
-        repository.update(user);
+        repository.save(user);
 
         return get(user.getId());
     }

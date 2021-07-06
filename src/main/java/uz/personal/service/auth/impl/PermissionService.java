@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import uz.personal.criteria.auth.PermissionCriteria;
 import uz.personal.domain.auth._Permission;
 import uz.personal.dto.GenericDto;
@@ -86,7 +87,7 @@ public class PermissionService extends GenericCrudService<_Permission, Permissio
         baseValidation(permission);
 
         permission.setCode(permission.getCode().toUpperCase());
-        repository.update(permission);
+        repository.save(permission);
 
         return get(permission.getId());
     }
